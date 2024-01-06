@@ -7,16 +7,16 @@ import uuid from 'react-uuid';
 
 function App() { 
 
-  const [mealPlans, setMealPlans] = useState([]);
- // const [mealPlans, setMealPlans] = useState(
- //   localStorage.mealPlans ? JSON.parse(localStorage.mealPlans) : []
-//  );
+
+ const [mealPlans, setMealPlans] = useState(
+ localStorage.mealPlans ? JSON.parse(localStorage.mealPlans) : []
+ );
 
 const [selectedDay, setSelectedDay] = useState(false);
 
-// useEffect(() => {
-// localStorage.setItem("mealPlans", JSON.stringify(mealPlans))
-// }, [mealPlans])
+useEffect(() => {
+ localStorage.setItem("mealPlans", JSON.stringify(mealPlans))
+ }, [mealPlans])
 
   const addMeal = () => {
     const newMeal = {
